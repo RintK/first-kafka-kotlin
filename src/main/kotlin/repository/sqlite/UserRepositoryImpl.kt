@@ -32,21 +32,25 @@ class UserRepositoryImpl : UserRepository {
         }
     }
 
-    override fun queryPerson(id: Int): Person {
+    override fun queryPerson(id: Int): Person? {
+        var result: Person? = null
         c.createStatement().use {
             val sql = """
                 SELECT *
                   FROM USER
                  WHERE ID = $id
             """.trimIndent()
-            val res = it.executeQuery(sql)
-            res.next()
-            return Person(res.getInt("id"),
-                res.getString("name"),
-                res.getInt("age"),
-                res.getInt("asset"),
-                res.getString("country"))
+            it.executeQuery(sql).use { res ->
+                if (res.next()) {
+                    result = Person(res.getInt("id"),
+                        res.getString("name"),
+                        res.getInt("age"),
+                        res.getInt("asset"),
+                        res.getString("country"))
+                }
+            }
         }
+        return result
     }
 
     override fun updatePerson(person: Person) {
