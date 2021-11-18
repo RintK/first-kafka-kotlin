@@ -8,7 +8,6 @@ import java.util.*
 
 private val defaultKafkaConfig: Properties = Properties().apply {
     put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
-    put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
     put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class.java.name)
     put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class.java.name)
     put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest")

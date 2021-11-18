@@ -15,6 +15,7 @@ dependencies {
     implementation("org.springframework.kafka:spring-kafka:2.7.6")
     implementation("org.slf4j:slf4j-log4j12:1.7.32")
     implementation("com.google.code.gson:gson:2.8.9")
+    implementation("org.xerial:sqlite-jdbc:3.7.2")
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
 }
 
