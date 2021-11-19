@@ -4,7 +4,7 @@
 
 kotlin을 사용해서 기본적인 kafka Producer, Consumer를 만들고 사용하는 방법을 테스트
 
-`org.springframework.kafka:spring-kafka` 를 사용하지 않고 `org.springframework.kafka:spring-kafka` 를 사용해서 구현
+`org.springframework.kafka:spring-kafka` 를 사용하지 않고 `org.apache.kafka:kafka-clients` 를 사용해서 구현
 
 ## 사전 준비
 
